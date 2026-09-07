@@ -14,7 +14,7 @@ class DiscographyDataInitializerTest {
         ArtistRepository artistRepository = new ArtistRepository();
         TrackRepository trackRepository = new TrackRepository();
 
-        new DiscographyDataInitializer().initialize(artistRepository, trackRepository);
+        new DiscographyDataInitializer(artistRepository, trackRepository).initialize();
 
         assertEquals(10, artistRepository.findAll().size());
         assertEquals(50, trackRepository.findAll().size());
@@ -34,10 +34,10 @@ class DiscographyDataInitializerTest {
     void initializationDoesNotDuplicateExistingData() {
         ArtistRepository artistRepository = new ArtistRepository();
         TrackRepository trackRepository = new TrackRepository();
-        DiscographyDataInitializer initializer = new DiscographyDataInitializer();
+        DiscographyDataInitializer initializer = new DiscographyDataInitializer(artistRepository, trackRepository);
 
-        initializer.initialize(artistRepository, trackRepository);
-        initializer.initialize(artistRepository, trackRepository);
+        initializer.initialize();
+        initializer.initialize();
 
         assertEquals(10, artistRepository.findAll().size());
         assertEquals(50, trackRepository.findAll().size());

@@ -71,7 +71,15 @@ public class DiscographyDataInitializer {
             {"Fotografia", "Latin Pop", "3:49", "Un Dia Normal"}
     };
 
-    public void initialize(ArtistRepository artistRepository, TrackRepository trackRepository) {
+    private final ArtistRepository artistRepository;
+    private final TrackRepository trackRepository;
+
+    public DiscographyDataInitializer(ArtistRepository artistRepository, TrackRepository trackRepository) {
+        this.artistRepository = artistRepository;
+        this.trackRepository = trackRepository;
+    }
+
+    public void initialize() {
         if (!artistRepository.findAll().isEmpty() || !trackRepository.findAll().isEmpty()) {
             return;
         }

@@ -6,7 +6,6 @@ import com.example.discography.service.ArtistDetails;
 import com.example.discography.service.ArtistService;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,7 +13,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-@WebServlet({"/artists", "/artists/create", "/artists/search", "/artists/delete"})
 public class ArtistServlet extends HttpServlet {
 
     private ArtistService artistService;

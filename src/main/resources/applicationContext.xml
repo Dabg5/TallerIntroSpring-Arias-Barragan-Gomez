@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="artistRepository" class="com.example.discography.repository.ArtistRepository"/>
+
+    <bean id="trackRepository" class="com.example.discography.repository.TrackRepository"/>
+
+    <bean id="discographyDataInitializer"
+          class="com.example.discography.repository.DiscographyDataInitializer"
+          init-method="initialize">
+        <constructor-arg index="0" ref="artistRepository"/>
+        <constructor-arg index="1" ref="trackRepository"/>
+    </bean>
+
+    <bean id="artistService" class="com.example.discography.service.ArtistService"
+          depends-on="discographyDataInitializer">
+        <constructor-arg index="0" ref="artistRepository"/>
+        <constructor-arg index="1" ref="trackRepository"/>
+    </bean>
+
+    <bean id="trackService" class="com.example.discography.service.TrackService"
+          depends-on="discographyDataInitializer">
+        <constructor-arg index="0" ref="trackRepository"/>
+        <constructor-arg index="1" ref="artistRepository"/>
+    </bean>
+</beans>
