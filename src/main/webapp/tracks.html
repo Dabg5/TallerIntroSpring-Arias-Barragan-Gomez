@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tracks Management</title>
+</head>
+
+<body>
+
+<h1>Tracks Management</h1>
+
+<h2>List Tracks</h2>
+
+<a href="tracks">
+    View all tracks
+</a>
+
+
+<h2>Create Track</h2>
+
+<form action="tracks" method="post">
+
+    <input type="hidden" name="action" value="create">
+
+    <label>ID:</label>
+    <input type="number" name="id" required>
+    <br><br>
+
+    <label>Title:</label>
+    <input type="text" name="title" required>
+    <br><br>
+
+    <label>Genre:</label>
+    <input type="text" name="genre" required>
+    <br><br>
+
+    <label>Duration:</label>
+    <input type="text" name="duration" placeholder="3:45" required>
+    <br><br>
+
+    <label>Album Title:</label>
+    <input type="text" name="albumTitle" required>
+    <br><br>
+
+
+    <h3>Select Artists</h3>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="1">
+        Michael Jackson
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="2">
+        Taylor Swift
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="3">
+        The Weeknd
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="4">
+        Adele
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="5">
+        Ed Sheeran
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="6">
+        Bruno Mars
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="7">
+        Dua Lipa
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="8">
+        Drake
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="9">
+        Billie Eilish
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" name="artistIds" value="10">
+        Shakira
+    </label>
+    <br><br>
+
+
+    <button type="submit">
+        Create Track
+    </button>
+
+</form>
+
+
+<h2>Delete Track</h2>
+
+<form action="tracks" method="post">
+
+    <input type="hidden" name="action" value="delete">
+
+    <label>Track ID:</label>
+    <input type="number" name="id" required>
+
+    <button type="submit">
+        Delete Track
+    </button>
+
+</form>
+
+</body>
+
+</html>

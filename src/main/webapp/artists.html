@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artists Management</title>
+</head>
+
+<body>
+
+<h1>Artists Management</h1>
+
+<h2>List Artists</h2>
+
+<a href="artists?action=list">
+    View all artists
+</a>
+
+
+<h2>Create Artist</h2>
+
+<form action="artists" method="post">
+
+    <input type="hidden" name="action" value="create">
+
+    <label>ID:</label>
+    <input type="number" name="id" required>
+    <br><br>
+
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <br><br>
+
+    <label>Nationality:</label>
+    <input type="text" name="nationality" required>
+    <br><br>
+
+    <button type="submit">
+        Create Artist
+    </button>
+
+</form>
+
+
+<h2>Search Artist</h2>
+
+<form action="artists" method="get">
+
+    <input type="hidden" name="action" value="search">
+
+    <label>Artist name:</label>
+    <input type="text" name="name" required>
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+
+<h2>Delete Artist</h2>
+
+<form action="artists" method="post">
+
+    <input type="hidden" name="action" value="delete">
+
+    <label>Artist ID:</label>
+    <input type="number" name="id" required>
+
+    <button type="submit">
+        Delete Artist
+    </button>
+
+</form>
+
+</body>
+</html>
