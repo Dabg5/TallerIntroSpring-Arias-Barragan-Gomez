@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Music Discography</h1>
-    <p>The application is being prepared.</p>
+    <p><a href="artists">View artists</a></p>
+    <p><a href="tracks">View tracks</a></p>
 </body>
 </html>
